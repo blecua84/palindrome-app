@@ -12,6 +12,10 @@ public class Palindrome {
         this.length = length;
     }
 
+    public static Palindrome createFromData(String text, int index, int length) {
+        return new Palindrome(text, index, length);
+    }
+
     public String getText() {
         return text;
     }
@@ -28,16 +32,12 @@ public class Palindrome {
         this.index = index;
     }
 
-    public void setLength(int length) {
-        this.length = length;
-    }
-
     public int getLength() {
         return length;
     }
 
-    public static Palindrome createFromData(String text, int index, int length) {
-        return new Palindrome(text, index, length);
+    public void setLength(int length) {
+        this.length = length;
     }
 
     @Override

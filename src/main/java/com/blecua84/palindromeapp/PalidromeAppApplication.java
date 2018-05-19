@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class PalidromeAppApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PalidromeAppApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PalidromeAppApplication.class, args);
+    }
 }

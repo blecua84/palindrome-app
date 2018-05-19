@@ -9,16 +9,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
-@RequestMapping("/")
 public class PalindromeController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PalindromeController.class);
+
+    private List<PalindromeVO> palindromes;
+    private boolean emptyResult;
+    private String inputWord;
 
     @Autowired
     private PalindromeService palindromeService;
@@ -26,22 +30,37 @@ public class PalindromeController {
     @Autowired
     private PalindromeToPalindromeVOConverter converter;
 
-    @GetMapping()
-    public List getPalindromes(String word) {
-        LOGGER.info("Init request for the word: {}", word);
-        List<PalindromeVO> palindromeVOS = new ArrayList<>();
-
-        List<Palindrome> palindromes = this.palindromeService.getThreeLongestPalindromesFromAWord(word);
-
-        if (palindromes != null && !palindromes.isEmpty()) {
-            for (Palindrome palindrome: palindromes) {
-                palindromeVOS.add(this.converter.convert(palindrome));
-            }
-        }
-
-        LOGGER.info("Number of palindromes found: {}", palindromeVOS.size());
-        LOGGER.info("End request for the word: {}", word);
-        return palindromeVOS;
+    public PalindromeController() {
+        this.palindromes = null;
     }
 
+    @PostMapping
+    public String submit(String inputWord) {
+        LOGGER.info("Init request for the word: {}", inputWord);
+        this.palindromes = new LinkedList<>();
+        this.emptyResult = false;
+        this.inputWord = inputWord;
+
+        List<Palindrome> palindromes = this.palindromeService.getThreeLongestPalindromesFromAWord(inputWord);
+
+        if (palindromes != null && !palindromes.isEmpty()) {
+            for (Palindrome palindrome : palindromes) {
+                this.palindromes.add(this.converter.convert(palindrome));
+            }
+        } else {
+            this.emptyResult = true;
+        }
+
+        LOGGER.info("Number of palindromes to show: {}", this.palindromes.size());
+        LOGGER.info("End request for the word: {}", inputWord);
+        return "redirect:/";
+    }
+
+    @GetMapping(value = "/")
+    public String welcome(Map<String, Object> model) {
+        model.put("palindromes", this.palindromes);
+        model.put("emptyResult", this.emptyResult);
+        model.put("inputWord", this.inputWord);
+        return "home";
+    }
 }

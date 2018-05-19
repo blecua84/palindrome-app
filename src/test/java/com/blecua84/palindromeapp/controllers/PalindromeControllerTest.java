@@ -13,7 +13,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
@@ -37,9 +36,8 @@ public class PalindromeControllerTest {
         when(palindromeService.getThreeLongestPalindromesFromAWord(anyString())).thenReturn(mockListPalindrome);
         when(converter.convert(any())).thenReturn(mock(PalindromeVO.class));
 
-        List<PalindromeVO> resultList = controller.getPalindromes("sqrrqabccbatudefggfedvwhijkllkjihxymnnmzpop");
+        controller.submit("sqrrqabccbatudefggfedvwhijkllkjihxymnnmzpop");
 
-        assertEquals(1, resultList.size());
         verify(palindromeService).getThreeLongestPalindromesFromAWord(any());
         verify(converter).convert(any());
     }
@@ -50,9 +48,8 @@ public class PalindromeControllerTest {
         when(mockListPalindrome.isEmpty()).thenReturn(true);
         when(palindromeService.getThreeLongestPalindromesFromAWord(anyString())).thenReturn(mockListPalindrome);
 
-        List<PalindromeVO> resultList = controller.getPalindromes("nopalindromes");
+        controller.submit("nopalindromes");
 
-        assertEquals(0, resultList.size());
         verify(palindromeService).getThreeLongestPalindromesFromAWord(any());
         verify(converter, times(0)).convert(any());
     }

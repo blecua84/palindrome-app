@@ -1,18 +1,18 @@
 buildscript {
-	ext {
-		springBootVersion = '2.0.2.RELEASE'
-		dockerGradleVersion = '0.13.0'
-	}
-	repositories {
+    ext {
+        springBootVersion = '2.0.2.RELEASE'
+        dockerGradleVersion = '0.13.0'
+    }
+    repositories {
         maven {
             url "https://plugins.gradle.org/m2/"
         }
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath("gradle.plugin.com.palantir.gradle.docker:gradle-docker:${dockerGradleVersion}")
-	}
+    }
 }
 
 apply plugin: 'java'
@@ -26,12 +26,13 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 sourceCompatibility = 1.8

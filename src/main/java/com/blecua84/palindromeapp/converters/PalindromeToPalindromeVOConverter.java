@@ -12,7 +12,7 @@ public class PalindromeToPalindromeVOConverter implements Converter<Palindrome, 
     public PalindromeVO convert(Palindrome source) {
         PalindromeVO target = null;
 
-        if(source != null) {
+        if (source != null) {
             target = new PalindromeVO();
 
             target.setText(source.getText());
