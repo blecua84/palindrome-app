@@ -1,11 +1,10 @@
-package com.blecua84.palidromeapp.models;
+package com.blecua84.palidromeapp.models.exchange;
 
-import com.blecua84.palidromeapp.models.Palindrome;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class PalindromeTest {
+public class PalindromeVOTest {
 
     private static final int LENGTH = 10;
     private static final int INDEX = 23;
@@ -13,14 +12,20 @@ public class PalindromeTest {
 
     @Test
     public void getLength_shouldReturnThePalindromeLength() {
-        Palindrome word = Palindrome.createFromData(TEXT, INDEX, LENGTH);
+        PalindromeVO word = new PalindromeVO();
+        word.setText(TEXT);
+        word.setIndex(INDEX);
+        word.setLength(LENGTH);
 
         assertEquals(LENGTH, word.getLength());
     }
 
     @Test
     public void toString_shouldReturnTheDataInTheCorrectFormat() {
-        Palindrome word = Palindrome.createFromData(TEXT, INDEX, LENGTH);
+        PalindromeVO word = new PalindromeVO();
+        word.setText(TEXT);
+        word.setIndex(INDEX);
+        word.setLength(LENGTH);
 
         assertEquals("Text: hijkllkjih, Index: 23, Length: 10", word.toString());
     }

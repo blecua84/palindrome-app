@@ -1,6 +1,6 @@
 package com.blecua84.palidromeapp.services.impl;
 
-import com.blecua84.palidromeapp.models.Palindrome;
+import com.blecua84.palidromeapp.models.internal.Palindrome;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

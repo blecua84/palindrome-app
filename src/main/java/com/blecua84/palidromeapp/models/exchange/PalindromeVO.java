@@ -1,23 +1,33 @@
-package com.blecua84.palidromeapp.models;
+package com.blecua84.palidromeapp.models.exchange;
 
-public class Palindrome {
+public class PalindromeVO {
 
     private String text;
     private int index;
     private int length;
 
-    private Palindrome(String text, int index, int length) {
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
         this.text = text;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
         this.index = index;
-        this.length = length;
     }
 
     public int getLength() {
         return length;
     }
 
-    public static Palindrome createFromData(String text, int index, int length) {
-        return new Palindrome(text, index, length);
+    public void setLength(int length) {
+        this.length = length;
     }
 
     @Override

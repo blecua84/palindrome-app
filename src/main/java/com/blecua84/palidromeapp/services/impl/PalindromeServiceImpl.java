@@ -1,10 +1,9 @@
 package com.blecua84.palidromeapp.services.impl;
 
-import com.blecua84.palidromeapp.models.Palindrome;
+import com.blecua84.palidromeapp.models.internal.Palindrome;
 import com.blecua84.palidromeapp.services.PalindromeService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,7 +15,7 @@ public class PalindromeServiceImpl implements PalindromeService {
     private static final int MAX_NUMBER_OF_PALINDROMES = 3;
 
     public List<Palindrome> getThreeLongestPalindromesFromAWord(String word) {
-        List<Palindrome> resultList = new ArrayList<>();
+        List<Palindrome> resultList = new LinkedList<>();
 
         if (word != null && !word.isEmpty()) {
             resultList = getAllPalindromesFromAWord(word);
