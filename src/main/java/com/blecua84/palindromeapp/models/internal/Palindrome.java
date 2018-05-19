@@ -1,4 +1,4 @@
-package com.blecua84.palidromeapp.models.internal;
+package com.blecua84.palindromeapp.models.internal;
 
 public class Palindrome {
 

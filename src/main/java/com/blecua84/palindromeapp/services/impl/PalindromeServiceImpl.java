@@ -1,7 +1,7 @@
-package com.blecua84.palidromeapp.services.impl;
+package com.blecua84.palindromeapp.services.impl;
 
-import com.blecua84.palidromeapp.models.internal.Palindrome;
-import com.blecua84.palidromeapp.services.PalindromeService;
+import com.blecua84.palindromeapp.models.internal.Palindrome;
+import com.blecua84.palindromeapp.services.PalindromeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;

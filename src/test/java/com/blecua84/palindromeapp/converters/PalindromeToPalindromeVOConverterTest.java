@@ -1,7 +1,7 @@
-package com.blecua84.palidromeapp.converters;
+package com.blecua84.palindromeapp.converters;
 
-import com.blecua84.palidromeapp.models.exchange.PalindromeVO;
-import com.blecua84.palidromeapp.models.internal.Palindrome;
+import com.blecua84.palindromeapp.models.exchange.PalindromeVO;
+import com.blecua84.palindromeapp.models.internal.Palindrome;
 import org.junit.Before;
 import org.junit.Test;
 

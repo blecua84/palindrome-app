@@ -1,4 +1,4 @@
-package com.blecua84.palidromeapp;
+package com.blecua84.palindromeapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

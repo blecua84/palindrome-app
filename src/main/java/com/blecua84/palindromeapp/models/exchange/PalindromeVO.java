@@ -1,4 +1,4 @@
-package com.blecua84.palidromeapp.models.exchange;
+package com.blecua84.palindromeapp.models.exchange;
 
 public class PalindromeVO {
 

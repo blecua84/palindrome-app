@@ -1,9 +1,9 @@
-package com.blecua84.palidromeapp.controllers;
+package com.blecua84.palindromeapp.controllers;
 
-import com.blecua84.palidromeapp.converters.PalindromeToPalindromeVOConverter;
-import com.blecua84.palidromeapp.models.exchange.PalindromeVO;
-import com.blecua84.palidromeapp.models.internal.Palindrome;
-import com.blecua84.palidromeapp.services.PalindromeService;
+import com.blecua84.palindromeapp.converters.PalindromeToPalindromeVOConverter;
+import com.blecua84.palindromeapp.models.exchange.PalindromeVO;
+import com.blecua84.palindromeapp.models.internal.Palindrome;
+import com.blecua84.palindromeapp.services.PalindromeService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

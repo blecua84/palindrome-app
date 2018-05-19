@@ -1,6 +1,6 @@
-package com.blecua84.palidromeapp.services;
+package com.blecua84.palindromeapp.services;
 
-import com.blecua84.palidromeapp.models.internal.Palindrome;
+import com.blecua84.palindromeapp.models.internal.Palindrome;
 
 import java.util.List;
 
