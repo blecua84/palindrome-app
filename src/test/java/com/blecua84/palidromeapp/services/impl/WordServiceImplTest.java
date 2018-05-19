@@ -56,4 +56,11 @@ public class WordServiceImplTest {
         assertEquals("Text: defggfed, Index: 13, Length: 8", palindromes.get(1).toString());
         assertEquals("Text: abccba, Index: 5, Length: 6", palindromes.get(2).toString());
     }
+
+    @Test
+    public void getPalindromes_receiveAnValidInputStringWithNoPalindromes_shouldReturnAnEmptyListOfWords() {
+        List<Palindrome> palindromes = wordServiceImpl.getThreeLongestPalindromesFromAWord("wordwithoutanypalindromes");
+
+        assertEquals(0, palindromes.size());
+    }
 }
