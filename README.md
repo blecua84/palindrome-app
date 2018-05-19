@@ -25,7 +25,7 @@ Running instructions:
     After that, if you type in your terminal:
     
     ```
-    gradle docker
+    docker images
     ```
     
     You can see the image below:
