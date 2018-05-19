@@ -4,7 +4,7 @@ import com.blecua84.palidromeapp.models.Palindrome;
 
 import java.util.List;
 
-public interface WordService {
+public interface PalindromeService {
 
     List<Palindrome> getThreeLongestPalindromesFromAWord(String word);
 }

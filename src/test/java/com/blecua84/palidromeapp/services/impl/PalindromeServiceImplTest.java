@@ -11,10 +11,10 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
-public class WordServiceImplTest {
+public class PalindromeServiceImplTest {
 
     @InjectMocks
-    private WordServiceImpl wordServiceImpl;
+    private PalindromeServiceImpl wordServiceImpl;
 
     @Test
     public void getPalindromes_receiveANullInputString_shouldReturnAnEmptyListOfWords() {

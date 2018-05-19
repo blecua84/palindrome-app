@@ -1,7 +1,7 @@
 package com.blecua84.palidromeapp.services.impl;
 
 import com.blecua84.palidromeapp.models.Palindrome;
-import com.blecua84.palidromeapp.services.WordService;
+import com.blecua84.palidromeapp.services.PalindromeService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class WordServiceImpl implements WordService {
+public class PalindromeServiceImpl implements PalindromeService {
 
     private static final int MAX_NUMBER_OF_PALINDROMES = 3;
 
